@@ -159,14 +159,14 @@ export const CustomRowStyle: Story = {
       ]}
       customRowStyle={(value) => {
         if(value.status === "open"){
-          return "bg-lib-yellow-200 text-lib-yellow-600"
+          return "!bg-lib-yellow-200 !text-lib-yellow-600"
         }
 
         if(value.status === "on hold"){
-          return "bg-lib-red-300 text-lib-red-800"
+          return "!bg-lib-red-300 !text-lib-red-800"
         }
 
-        return "bg-lib-green-500 text-white"
+        return "!bg-lib-green-500 !text-white"
       }}
     />
   )
