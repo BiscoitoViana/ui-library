@@ -42,5 +42,6 @@ export default defineConfig({
         assetFileNames: "ffsconsulting-ui-lib.[ext]",
       },
     }
-  }
+  },
+  base: 'https://biscoitoviana.github.io/ui-library/'
 })
