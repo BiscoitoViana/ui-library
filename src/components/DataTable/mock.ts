@@ -16,7 +16,7 @@ const products: MockDataTableRecord[] = [
   },
   {
     id: 943290,
-    customer: "Ray C. Stillman",
+    customer: "Ray C. Stone",
     shippingTo: "Buenos Aires, Argentina",
     price: 250,
     status: "on hold"

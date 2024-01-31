@@ -39,7 +39,7 @@ export default defineConfig({
           "react": "React",
           "react-dom": "ReactDOM",
         },
-        assetFileNames: "ffsconsulting-ui-lib.[ext]",
+        assetFileNames: "ui-components.[ext]",
       },
     }
   },
