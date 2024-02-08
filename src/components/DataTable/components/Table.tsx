@@ -24,7 +24,11 @@ function Table<T>({
   ...props
 }: TableProps<T>): JSX.Element {
   return (
-    <table {...props} className="w-full border-collapse">
+    <table
+      {...props}
+      className="w-full border-collapse"
+      cellSpacing={0}
+    >
       <THead
         columDefs={columnDefs}
         stickyHeader={stickyHeader}

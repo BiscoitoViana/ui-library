@@ -34,6 +34,13 @@ const products: MockDataTableRecord[] = [
     shippingTo: "Cuzco, Peru",
     price: 2901,
     status: "open"
+  },
+  {
+    id: 943287,
+    customer: "Brock Lee",
+    shippingTo: "Beijing, China",
+    price: 1440,
+    status: "open"
   }
 ]
 

@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "table-header": 'inset 0 1px 0 #DEE8EF, inset 0 -1px 0 #DEE8EF, 1px 0 0 #DEE8EF'
+      },
       colors: {
         "lib-blue": {
           "100": "#F4F9FD",

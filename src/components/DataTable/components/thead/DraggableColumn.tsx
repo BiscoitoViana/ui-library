@@ -10,7 +10,7 @@ function DraggableColumn({
   }
 
   return (
-    <th className="border border-lib-grey-200 h-12"></th>
+    <th className="border border-lib-grey-200 h-12 shadow-table-header"></th>
   )
 }
 

@@ -1,0 +1,88 @@
+import * as DataTableStories from "./DataTable.stories.tsx"
+import {
+  Canvas,
+  Meta,
+  Title,
+  Description
+} from "@storybook/blocks"
+
+<Meta of={DataTableStories} />
+
+<Title />
+
+This is a standard data list component. Or simply an HTML Table on steroids.  
+It can render a simple table, sort by columns and reorder rows with the drag n drop feature
+
+<Canvas of={DataTableStories.Standard} />
+
+# Props
+
+The component is based on the HTML table element, so it has all of its standard props.  
+Besides that, it has some more custom props:
+
+## data
+
+`Row[]`  
+**required**  
+The `data` prop is the list of rows to be rendered by the component. 
+It expects an array of objects. Usually each property of the object maps to a column but that is totally customizable using the property `columnDefs`
+
+## keyExtractor
+
+`keyof Row`  
+**required**  
+This is the propery of the object in the data array that has its unique identifier. Usually name **id**.
+
+## columnDefs
+
+**required**  
+An array of column definitions dictating how to display data. Only the columns specified here will be displayed.  
+Each item of the array can have:
+
+### column
+`keyof Row` **required**
+
+The data property related to the current column
+
+### headerTitle
+`string`  
+
+The string to be shown in the header of the column
+
+### customHeader
+`JSX.Element`  
+
+When you want to render something more that just a string as the column header
+
+### customCellRenderer
+`(Row) => JSX.Element`  
+
+When you want to render more than the property value in the cell. This function returns a JSX.Element. It's great for condition rendering and custom elements.
+
+### align
+`"left"` `"center"` `"right"`  
+The aligment of the text from the header and the body column
+
+### wrapContent
+`"wrap"` `"nowrap"`
+
+The behavior of the text inside both the column header and the body cell to allow it to break if there are no space left or to force it to stay in the same line. Defaults to "wrap".
+
+## customRowStyle
+`(Row) => string`  
+
+A function that returns a string to be applied as the class of the row. Perfect for row styles that can differ depending on a value.
+
+<Canvas of={DataTableStories.CustomRowStyle} />
+
+## hiddenHeader
+`boolean`  
+
+A boolean for when the header row is not necessary. Defaults to false.
+
+<Canvas of={DataTableStories.HiddenHeader} />
+
+## stickyHeader
+`boolean`  
+
+A boolean for when the header should be fixed at the top. Defaults to false

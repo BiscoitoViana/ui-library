@@ -26,7 +26,7 @@ function THead<T>({
     return <></>
   }
 
-  const className = ["bg-lib-grey-100", classnames(
+  const className = ["bg-lib-grey-200 top-0", classnames(
     position({
       [`sticky`]: stickyHeader
     }),
@@ -34,7 +34,7 @@ function THead<T>({
 
   return (
     <thead className={className.join(" ")}>
-      <tr>
+      <tr className="bg-lib-grey-100">
         <DraggableColumn draggable={draggable} />
         {columDefs.map(definition => {
           return (
