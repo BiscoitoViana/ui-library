@@ -5,7 +5,7 @@ type HandleProps = ComponentProps<"button">
 
 function Handle(props: HandleProps): JSX.Element {
   return (
-    <td className="border-l border-b border-t border-lib-grey-200 pl-2 overflow-hidden w-8">
+    <td className="border-l border-lib-grey-200 pl-2 overflow-hidden w-8">
       <button
         {...props}
         className="pointer w-4"

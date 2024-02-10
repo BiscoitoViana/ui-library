@@ -1,0 +1,88 @@
+import * as ComboboxStories from "./Combobox.stories.tsx"
+import {
+  Canvas,
+  Meta,
+  Title,
+  Description
+} from "@storybook/blocks"
+
+<Meta of={ComboboxStories} />
+
+<Title />
+
+A field to type you search and render the list of options.
+The main focus is to render the options from an endpoint and return the search term on key up.
+
+<Canvas of={ComboboxStories.Standard} />
+
+# Props
+
+In order to work properly, the Combobox require some props:
+
+## searchTerm
+
+`string`  
+**required**  
+The `searchTerm` prop is the text rendered on the dropdown input. 
+The expected implementation requires a state (of type string) to be passed as searchTerm and then use it to fetch the options
+
+## onChangeSearchTerm
+
+`(string) => void`  
+**required**  
+This is the dispatch function to update the searchTerm
+
+## value
+
+`Option | null`
+**required**  
+The selected value of the dropdown.
+
+## onChangeSearchTerm
+
+`(Option | null) => void`
+**required**  
+The function to select value of the dropdown.
+
+## options
+
+`Option[]`  
+**required**  
+An array of options to be shown in the dropdown. It can have any object type. Just remember to specify the key property.
+
+## optionKey
+
+`keyof Option`  
+**required**  
+The key property of the option object. It's used to index each item. It's also the property used as label for the dropdown list if no `optionLabel` or `customOptionLabel` is provided.
+
+## optionLabel
+
+`keyof Option`  
+The property of the option object to be used as a label in the dropdown. 
+
+<Canvas of={ComboboxStories.OptionLabel} />
+
+## customOptionLabel
+`(Option) => JSX.Element`  
+
+When you want to render more than the property value in the dropdown item. This function returns a JSX.Element. It's great for condition rendering and custom elements.
+
+<Canvas of={ComboboxStories.CustomOptionLabel} />
+
+## label
+`string`  
+
+The text to be shown as a placeholder of the closed dropdown.
+
+## placeholder
+`string`  
+
+The text to be shown as the placeholder of the dropdown input
+
+## debounce
+`number`  
+
+The number in miliseconds for the onChangeSearchTerm to take effect. Ideal for when fetching data on key down.
+
+<Canvas of={ComboboxStories.WithDebounce} />

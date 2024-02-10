@@ -9,13 +9,15 @@ type TBodyDroppableProps<T> = {
   keyExtractor: keyof T
   columnDefs: ColumnDef<T>[]
   customRowStyle?: (data: T) => string
+  hiddenHeader: boolean
 }
 
 function Droppable<T>({
   data,
   keyExtractor,
   columnDefs,
-  customRowStyle
+  customRowStyle,
+  hiddenHeader
 }: TBodyDroppableProps<T>): JSX.Element {
   const [enabled, setEnabled] = useState<boolean>(false)
 
@@ -32,12 +34,15 @@ function Droppable<T>({
     return <></>
   }
 
+  const classNames = hiddenHeader ? "border-t border-lib-grey-200" : ""
+
   return (
     <DroppableBlock droppableId="tbody">
       {(provided) => (
         <tbody
           {...provided.droppableProps}
           ref={provided.innerRef}
+          className={classNames}
         >
           {data.map((row, index) => (
             <TRowDraggable

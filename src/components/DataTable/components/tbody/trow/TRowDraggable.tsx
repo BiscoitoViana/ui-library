@@ -19,7 +19,7 @@ function TRowDraggable<T>({
   columnDefs,
   customRowStyle
 }: TRowProps<T>): JSX.Element {
-  const className = "border border-lib-grey-200 text-lib-grey-500 bg-white"
+  const className = "border border-lib-grey-200 text-lib-grey-500 bg-white first-of-type:border-t-0"
 
   return (
     <Draggable

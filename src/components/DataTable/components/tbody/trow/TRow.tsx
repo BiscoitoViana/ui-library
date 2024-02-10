@@ -13,7 +13,7 @@ function TRow<T>({
   customRowStyle
 }: TRowProps<T>): JSX.Element {  
   return (
-    <tr className={`border border-lib-grey-200 text-lib-grey-500 bg-white ${customRowStyle}`}>
+    <tr className={`border border-lib-grey-200 text-lib-grey-500 bg-white first-of-type:border-t-0 ${customRowStyle}`}>
       {columnDefs.map(col => (
         <TColumn
           key={col.column as string}

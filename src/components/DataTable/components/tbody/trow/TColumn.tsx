@@ -1,5 +1,5 @@
 import {
-  borders,
+  // borders,
   classnames,
   padding,
   textAlign,
@@ -17,10 +17,10 @@ function TColumn<T>({
   data,
   columnDef
 }: TColumnProps<T>): JSX.Element {
-  const className = ["border-lib-grey-200 first-if-type:border-l last-of-type:border-r", classnames(
+  const className = ["border-lib-grey-200 first-of-type:border-l last-of-type:border-r", classnames(
     padding('p-3'),
     typography('text-xs'),
-    borders('border-y'),
+    // borders('border-y'),
     textAlign({
       ['text-left']: columnDef.align === undefined || columnDef.align === "left",
       ['text-center']: columnDef.align === "center",

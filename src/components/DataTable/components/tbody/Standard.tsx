@@ -6,16 +6,20 @@ type TBodyStandardProps<T> = {
   keyExtractor: keyof T
   columnDefs: ColumnDef<T>[]
   customRowStyle?: (data: T) => string
+  hiddenHeader: boolean
 }
 
 function Standard<T>({
   data,
   keyExtractor,
   columnDefs,
-  customRowStyle
+  customRowStyle,
+  hiddenHeader
 }: TBodyStandardProps<T>): JSX.Element {
+  const classNames = hiddenHeader ? "border-t border-lib-grey-200" : ""
+
   return (
-    <tbody>
+    <tbody className={classNames}>
       {data.map(row => (
         <TRow
           key={row[keyExtractor] as string}

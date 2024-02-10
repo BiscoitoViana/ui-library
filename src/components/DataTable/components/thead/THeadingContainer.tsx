@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import {
-  borders,
   classnames,
   height,
   padding,
@@ -30,8 +29,7 @@ function THeadingContainer<T>({
   onSortButtonClick,
   sorting,
 }: THeadingContainerProps<T>): JSX.Element {
-  const className = ['bg-lib-grey-100 border-lib-grey-200 shadow-table-header', classnames(
-    borders('border-x'),
+  const className = ['border-x bg-lib-grey-100 border-lib-grey-200 shadow-table-header', classnames(
     position('relative'),
     height('h-12'),
     padding('px-3', {

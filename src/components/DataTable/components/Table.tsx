@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { DataTableProps } from "../types";
 import { SortingReducerState } from "../sorting/types";
@@ -11,6 +12,7 @@ type TableProps<T> = DataTableProps<T> & {
 }
 
 function Table<T>({
+  data,
   columnDefs,
   hiddenHeader = false,
   draggable = false,
@@ -44,6 +46,7 @@ function Table<T>({
         columnDefs={columnDefs}
         keyExtractor={keyExtractor}
         customRowStyle={customRowStyle}
+        hiddenHeader={hiddenHeader}
       />
     </table>
   )
