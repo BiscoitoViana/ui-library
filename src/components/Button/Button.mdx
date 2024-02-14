@@ -1,0 +1,45 @@
+import * as ButtonStories from "./Button.stories.tsx"
+import {
+  Canvas,
+  Meta,
+  Title,
+  Description
+} from "@storybook/blocks"
+
+<Meta of={ButtonStories} />
+
+<Title />
+
+The most basic form component. The button can be used to trigger events.
+
+<Canvas of={ButtonStories.AllButtons} />
+
+# variants
+
+The buttons are divided in three variants: `primary`, `secondary` and `danger`. Each of them has its role and should be followed accordingly.
+
+## primary
+
+It means that the button is the main focus of the button group and triggers the main expected action. Usually used for submit or confirm functions.  
+
+<Canvas of={ButtonStories.Primary} />
+
+It is expected to have a maximum of only one primary button per button group
+
+<Canvas of={ButtonStories.PrimaryButtonGroup} />
+
+## secondary
+
+This is the default button role. It can be used in any role, even in conjuction with primary variant.  
+
+<Canvas of={ButtonStories.Secondary} />
+
+## danger
+
+Like the primary variant, the danger button is the main focus and triggers te main expected action of the button group, but this one is meant for destructive actions such as delete.
+
+<Canvas of={ButtonStories.Danger} />
+
+Like the primary variant it is expected to have a maximum of only one danger button per button group.
+
+<Canvas of={ButtonStories.DangerButtonGroup} />
